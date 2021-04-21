@@ -1,0 +1,66 @@
+1)
+    1.1)
+        1) Sim
+        2) Sim
+        3) Sim
+        4) Não
+        5) Não
+        6) Sim
+        7) Não
+        8) Não
+
+    1.2)
+        4) Demasiada imprevisibilidade no ambiente e a capacidade de absorver informação sensorial ainda é limitada
+        5) Ter piada e/ou humor é subjectivo
+        7) Pode dar aconselhamento técnico, contudo a área legal é muito subjectiva a interpretação e não é simplesmente polarizada como branco e preto.
+        8) Novamente, muito subjectivo aos ideais de cada um
+
+2) 2.3
+
+3)
+    3.1) Não (Completamente Observável)
+    3.2) Não (Estratégico)
+    3.3) Não (Discreto)
+    3.4) Sim
+
+4)
+    4.1) Sim
+    4.2) Sim
+    4.3) Não (Discreto)
+    4.4) Sim
+
+5)
+    5.1) Sim
+    5.2) Sim
+    5.3) Sim
+    5.4) Sim
+
+6)
+    6.1)
+    if (T1 >= 22 && T1 <= 24) {                 // Se temperatura da sala dentro da margem, fecha/desliga tudo
+        [NAQ, NAC, NAJ]
+    } else if (T1 < 22 && T1 >= 20) {           // Se temperatura da sala abaixo da margem mas dentro do limite, verifica exterior
+        if (T2 > T1){
+            [NAQ, NAC, AJ]                          // Se exterior acima que sala, usa janela
+        } else {
+            [AQ, NAC, NAJ]                          // Senão, usa aquecedor
+        }
+    } else if (T1 < 20) {                       // Se temperatura da sala abaixo do limite usa aquecedor
+        [AQ, NAC, NAJ]
+    } else if (T1 > 24 && T1 <= 26) {           // Se temperatura da sala acima da margem mas dentro do limite, verifica exterior
+        if (T2 < T1){
+            [NAQ, NAC, AJ]                          // Se exterior abaixo da sala, usa janela
+        } else {
+            [NAQ, AC, NAJ]                          // Senão, usa ar-condicionado
+        }
+    } else {                                    // Se temperatura da sala acima do limite usa ar-condicionado
+        [NAQ, AC, NAJ]
+    }
+
+    6.2) <<ver python>>
+
+    6.3) verificar presença de utilizador que usufrui-se da temperatura além de tentar determinar quando é que o utilizador chegaria ao local.
+
+7) Se não vê obstáculo, vai em frente. Se vê obstáculo, vira. Se for contra obstáculo, ricochete.
+    Comportamento estranho: virar permanentemente em circulos
+
