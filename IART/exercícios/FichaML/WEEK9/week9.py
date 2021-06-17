@@ -12,7 +12,7 @@ import pydot
 
 
 base_path = Path(__file__).parent
-file_path = (base_path / "../../../aima-data/restaurant.csv").resolve()
+file_path = (base_path / "../../../../aima-data/restaurant.csv").resolve()
 
 # Import .csv as pandas Dataframe
 columns = ["Alternate", "Bar", "Fri/Sat", "Hungry", "Patrons", "Price", "Raining", "Reservation", "Type", "WaitEstimate", "WillWait"]
@@ -65,13 +65,13 @@ clf = clf.fit(X, y)
 
 sk.tree.export_graphviz(clf,
             feature_names = features,
-            out_file='./IART/exercícios/FichaML/dtree.dot')
+            out_file='./IART/exercícios/FichaML/WEEK9/dtree.dot')
 
 dotfile = StringIO()
 sk.tree.export_graphviz(clf, 
             feature_names = features,
             out_file=dotfile)
 (graph,) = pydot.graph_from_dot_data(dotfile.getvalue())
-graph.write_png("./IART/exercícios/FichaML/dtree.png")
+graph.write_png("./IART/exercícios/FichaML/WEEK9/dtree.png")
 
 print(labels)
